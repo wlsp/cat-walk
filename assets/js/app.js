@@ -2,13 +2,14 @@
 
 let cat = document.getElementById('cat');
 let walk = 0; 
+let timeInterval
 let area = window.innerWidth;
 let turning = true; 
 
 
 catWalk = () => {
 console.log("Ich funktioniere")
-setInterval(() => {
+timeInterval = setInterval(() => {
     if (walk > area - 300) {
         turning = false;
     }  if (turning) {
@@ -27,8 +28,8 @@ setInterval(() => {
 }
 
 
-pause = () => {
-    clearInterval();
+const pause = () => {
+    clearInterval(timeInterval);
 }
 
 
@@ -38,5 +39,5 @@ turn = () => {
 
 
 catSpeed = () => {
-    catWalk(200);
+    catWalk(1000);
 }
