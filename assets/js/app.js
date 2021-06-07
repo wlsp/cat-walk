@@ -8,14 +8,15 @@ let turning = true;
 
 
 catWalk = () => {
-console.log("Ich funktioniere")
-timeInterval = setInterval(() => {
+// console.log("Ich funktioniere")
+catInterval = setInterval(() => {
     if (walk > area - 300) {
         turning = false;
     }  if (turning) {
     cat.style.left = walk + "px";
     cat.style.transform = "rotate(0deg)";
     walk += 15;
+
     } else if (!turning){
         if (walk <=0) {
             turning = true;
@@ -23,13 +24,12 @@ timeInterval = setInterval(() => {
         cat.style.left = walk + "px";
         cat.style.transform = "rotateY(180deg)";
     }
-
 }, 350);
 }
 
 
 const pause = () => {
-    clearInterval(timeInterval);
+    clearInterval(catInterval);
 }
 
 
